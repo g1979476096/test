@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.4/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{test()}}
+    </div>
+
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'test'
+            },
+            methods:{
+                test(){
+                    function timeout(ms) {
+                    return new Promise((resolve, reject) => {
+                        setTimeout(resolve, ms, 'done');setTimeout(function(){alert('zhixing')},1000);alert(2)
+                    });
+                    }
+
+                    timeout(2000).then((value) => { alert(1)
+                    alert(value); alert(3)
+                    });
+                }
+            },
+            created() {
+                // this.test()
+            },
+            
+        })
+    </script>
+</body>
+</html>
