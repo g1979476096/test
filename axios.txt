@@ -1,0 +1,46 @@
+Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。 
+
+axios.get('/user?ID=12345')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+// 上面的请求也可以这样做
+axios.get('/user', {
+    params: {
+      ID: 12345
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+  axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+// 发送 POST 请求
+axios({
+  method: 'post',
+  url: '/user/12345',
+  data: {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  }
+});
+
+// 发送 GET 请求（默认的方法）
+axios('/user/12345');
